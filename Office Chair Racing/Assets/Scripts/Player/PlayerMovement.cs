@@ -9,47 +9,24 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float steerSpeed = 1f;
     private Vector2 steerInput;
     private bool isAccelerating = false;
-    public bool isWaitingForPlayers = true;
 
-    public int playerIndex = 0; //P1 or P2, set in MultiplayerSpawn script
     public int lapNumber;
     public int checkpointIndex;
 
-    [SerializeField] private GameObject[] playerSkins = new GameObject[2];
-
+    private PlayerSpawnSetup playerSpawnSetup;
     private Rigidbody myRigidbody;
     private Animator myAnimator;
-    private GameObject playerManager;
     [SerializeField] private ParticleSystem smokeParticles;
 
     void Start()
     {
-        myAnimator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody>();
+
+        myAnimator = GetComponent<Animator>();
+        playerSpawnSetup = GetComponent<PlayerSpawnSetup>();
 
         lapNumber = 1;
         checkpointIndex = 0;
-
-        playerManager = GameObject.FindGameObjectWithTag("MultiplayerManager");
-
-        //single player setup
-        if (playerManager == null)
-        {
-            isWaitingForPlayers = false;
-            return;
-        }
-        //multi-player setup
-        else
-        {
-            if (playerManager.GetComponent<MultiplayerSpawn>().playerCount == 1)
-            {
-                playerSkins[0].SetActive(false);
-            }
-            else
-            {
-                playerSkins[1].SetActive(false);
-            }
-        }
     }
 
     public void OnAccelerate(InputAction.CallbackContext context)
@@ -73,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlayerAccelerate()
     {
-        if (isAccelerating && !isWaitingForPlayers)
+        if (isAccelerating && !playerSpawnSetup.isWaitingForPlayers)
         {
             myRigidbody.AddRelativeForce(Vector3.back * moveSpeed * Time.deltaTime);
         }
@@ -102,6 +79,12 @@ public class PlayerMovement : MonoBehaviour
         PlayerAnimations();
     }
 
+    private void PlayerAnimations()
+    {
+        myAnimator.SetBool("isAccelerating", isAccelerating);
+    }
+
+    //used to fix out of control spinning after collisions
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Wall")
@@ -110,15 +93,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    //used to fix out of control spinning after collisions
     IEnumerator ResetAngularVelocity()
     {
         yield return new WaitForSeconds(0.2f);
         myRigidbody.angularVelocity = Vector3.zero;
-    }
-
-    private void PlayerAnimations()
-    {
-        myAnimator.SetBool("isAccelerating", isAccelerating);
     }
 }

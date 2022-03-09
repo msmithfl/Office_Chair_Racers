@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7532530096028919629}
   - component: {fileID: 7532530096028919619}
   m_Layer: 0
-  m_Name: PlayerManager
+  m_Name: MultiplayerManager
   m_TagString: MultiplayerManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,3 +102,7 @@ MonoBehaviour:
   spawnPointP1: {fileID: 0}
   spawnPointP2: {fileID: 0}
   playerCount: 0
+  countdownTime: 3
+  numberCountdownTime: 1.4
+  waitForPlayersText: {fileID: 0}
+  raceCountdownTextObj: {fileID: 0}

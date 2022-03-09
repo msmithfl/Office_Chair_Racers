@@ -9443,9 +9443,10 @@ GameObject:
   - component: {fileID: 8054727430937435504}
   - component: {fileID: 8054727430937435507}
   - component: {fileID: 8054727430937435511}
+  - component: {fileID: 926449503644094223}
   - component: {fileID: 8054727430937435510}
   m_Layer: 7
-  m_Name: PlayerTest
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9574,11 +9575,36 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d4ad7d6c-5100-4bc8-941c-a312d384fcaa
     m_ActionName: Play Mode/Steering[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e30ea5d8-7b27-48cb-9f58-861fe7ca9cc2
+    m_ActionName: UI/Submit[/Mouse/leftButton,/Keyboard/enter,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: faf29976-02e4-4458-8abf-58357d745eda
+    m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Play Mode
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &926449503644094223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8054727430937435501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e8d194a13b5a34398b4c695b02c6a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerIndex: 0
+  isWaitingForPlayers: 1
+  playerSkins:
+  - {fileID: 2477083009399109352}
+  - {fileID: 4885354567009242632}
 --- !u!114 &8054727430937435510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9593,12 +9619,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 275
   steerSpeed: 4
-  isWaitingForPlayers: 1
   lapNumber: 0
   checkpointIndex: 0
-  playerSkins:
-  - {fileID: 4885354567009242632}
-  - {fileID: 2477083009399109352}
   smokeParticles: {fileID: 7754184704911075804}
 --- !u!1 &8075986268970432337
 GameObject:

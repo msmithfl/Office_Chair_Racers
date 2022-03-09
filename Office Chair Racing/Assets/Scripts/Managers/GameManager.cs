@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public bool soloMode;
     public bool twoPlayerMode;
     public bool timeTrialMode;
+    public int testNum = 0;
 
     private void Awake()
     {
@@ -21,11 +22,5 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-    private void Start()
-    {
-        soloMode = false;
-        twoPlayerMode = false;
-        timeTrialMode = false;
     }
 }

@@ -38,20 +38,20 @@ public class MenuManager: MonoBehaviour
     //game menu buttons
     public void SoloButton()
     {
-        SceneManager.LoadScene(1);
         gameManager.soloMode = true;
+        SceneManager.LoadScene(1);
     }
 
     public void TwoPlayerButton()
     {
-        SceneManager.LoadScene(1);
         gameManager.twoPlayerMode = true;
+        SceneManager.LoadScene(1);
     }
 
     public void TimeTrialButton()
     {
-        SceneManager.LoadScene(1);
         gameManager.timeTrialMode = true;
+        SceneManager.LoadScene(1);
     }
 
     public void BackButton()
