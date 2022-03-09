@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Wall
+  - MaleHead
+  - MaleSuit
+  - RacingChair
+  - Female_SkinForSkirt
+  - Female_TrouserSuit
+  - Female_SkirtSuit
+  - Female_SkinForTrousers
+  - PlayerManager
+  - SodaCan
+  - GameManager
+  - MultiplayerManager
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Wall
+  - Water
+  - UI
+  - SodaCan
+  - Player
+  - VendingMachine
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
