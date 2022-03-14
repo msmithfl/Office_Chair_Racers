@@ -39,6 +39,7 @@ public class MenuManager: MonoBehaviour
     public void SoloButton()
     {
         gameManager.soloMode = true;
+        gameManager.twoPlayerMode = false;
         SceneManager.LoadScene(1);
     }
 

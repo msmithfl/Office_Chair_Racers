@@ -16,6 +16,10 @@ TagManager:
   - SodaCan
   - GameManager
   - MultiplayerManager
+  - WaitForPlayerText
+  - SpawnPoint1
+  - SpawnPoint2
+  - RaceCountdown
   layers:
   - Default
   - TransparentFX

@@ -14,7 +14,7 @@ public class PlayerSpawnSetup : MonoBehaviour
 
     void Start()
     {
-        playerManager = GameObject.FindGameObjectWithTag("MultiplayerManager");
+        playerManager = GameObject.FindGameObjectWithTag("GameManager");
 
         //single player setup
         if (playerManager == null)

@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
 
+    private PlayerInputManager playerInputManager;
+
     public bool soloMode;
     public bool twoPlayerMode;
     public bool timeTrialMode;
-    public int testNum = 0;
 
     private void Awake()
     {
@@ -21,6 +23,23 @@ public class GameManager : MonoBehaviour
         else if (gameManager != null)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void Start()
+    {
+        playerInputManager = GetComponent<PlayerInputManager>();
+    }
+
+    private void Update()
+    {
+        if (twoPlayerMode == true)
+        {
+            playerInputManager.enabled = true;
+        }
+        if (twoPlayerMode == false)
+        {
+            playerInputManager.enabled = false;
         }
     }
 }
