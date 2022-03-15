@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerSpawnSetup : MonoBehaviour
 {
@@ -17,8 +18,9 @@ public class PlayerSpawnSetup : MonoBehaviour
         playerManager = GameObject.FindGameObjectWithTag("GameManager");
 
         //single player setup
-        if (playerManager == null)
+        if (playerManager.GetComponent<PlayerInputManager>().enabled == false)
         {
+            playerSkins[0].SetActive(false);
             isWaitingForPlayers = false;
             return;
         }
