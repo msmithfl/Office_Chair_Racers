@@ -18,6 +18,9 @@ public class LapManager : MonoBehaviour
 
     [SerializeField] private TMP_Text p1LapCounter;
     [SerializeField] private TMP_Text p2LapCounter;
+    [SerializeField] private TMP_Text winnerText;
+
+    [SerializeField] private AfterGameMenuManager afterGameMenuManager;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -36,8 +39,10 @@ public class LapManager : MonoBehaviour
                 {
                     if (!raceIsOver)
                     {
-                        Debug.Log($"P{playerIndex} Wins");
                         raceIsOver = true;
+                        winnerText.text = $"P{playerIndex} Wins!";
+                        winnerText.gameObject.SetActive(true);
+                        StartCoroutine(DisableWinnerText());   
                     }
                 }
 
@@ -58,5 +63,12 @@ public class LapManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public IEnumerator DisableWinnerText()
+    {
+        yield return new WaitForSeconds(3f);
+        winnerText.gameObject.SetActive(false);
+        afterGameMenuManager.SetGameMenuActive();
     }
 }

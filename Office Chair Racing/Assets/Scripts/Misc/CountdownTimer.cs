@@ -25,6 +25,7 @@ public class CountdownTimer : MonoBehaviour
 
     public IEnumerator StartRaceCountdown()
     {
+
         //Ready!
         raceCountdownTextObj.SetActive(true);
         yield return new WaitForSeconds(countdownSpeed);

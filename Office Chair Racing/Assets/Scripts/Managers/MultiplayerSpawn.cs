@@ -13,6 +13,14 @@ public class MultiplayerSpawn : MonoBehaviour
 
     private CountdownTimer countdownTimer;
 
+    private void Awake()
+    {
+        if (countdownTimer == null)
+        {
+            return;
+        }
+    }
+
     public void OnPlayerJoined()
     {
         //code for first player joined
