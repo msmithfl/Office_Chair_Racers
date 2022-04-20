@@ -12,13 +12,10 @@ public class MenuManager: MonoBehaviour
     [SerializeField] private Button firstBtnMainMenu;
     [SerializeField] private Button firstBtnGameMenu;
 
-    private GameManager gameManager;
-
     private void Start()
     {
         mainMenuObj.SetActive(true);
         gameMenuObj.SetActive(false);
-        gameManager = FindObjectOfType<GameManager>();
     }
 
     //main menu buttons
@@ -36,23 +33,19 @@ public class MenuManager: MonoBehaviour
     }
 
     //game menu buttons
-    public void SoloButton()
+    public void Track1()
     {
-        gameManager.soloMode = true;
-        gameManager.twoPlayerMode = false;
         SceneManager.LoadScene(1);
     }
 
-    public void TwoPlayerButton()
+    public void Track2()
     {
-        gameManager.twoPlayerMode = true;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
-    public void TimeTrialButton()
+    public void Track3()
     {
-        gameManager.timeTrialMode = true;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
 
     public void BackButton()

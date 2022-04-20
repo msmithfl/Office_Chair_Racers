@@ -17,24 +17,13 @@ public class PlayerSpawnSetup : MonoBehaviour
     {
         playerManager = GameObject.FindGameObjectWithTag("GameManager");
 
-        //single player setup
-        if (playerManager.GetComponent<PlayerInputManager>().enabled == false)
+        if (playerManager.GetComponent<MultiplayerSpawn>().playerCount == 1)
         {
             playerSkins[0].SetActive(false);
-            isWaitingForPlayers = false;
-            return;
         }
-        //multi-player setup
         else
         {
-            if (playerManager.GetComponent<MultiplayerSpawn>().playerCount == 1)
-            {
-                playerSkins[0].SetActive(false);
-            }
-            else
-            {
-                playerSkins[1].SetActive(false);
-            }
+            playerSkins[1].SetActive(false);
         }
     }
 }

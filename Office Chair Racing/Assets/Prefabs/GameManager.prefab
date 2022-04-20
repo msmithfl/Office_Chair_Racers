@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3275407133805375601}
-  - component: {fileID: 3275407133805375600}
   - component: {fileID: 3275407133805375503}
   - component: {fileID: 3275407133805375602}
+  - component: {fileID: 9048308596203698505}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -33,21 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3275407133805375600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3275407133805375603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f04f5b7bc730a8e47a4f66aa6b6056d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soloMode: 0
-  twoPlayerMode: 1
-  timeTrialMode: 0
 --- !u!114 &3275407133805375503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,3 +102,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCount: 0
   waitForPlayersBool: 1
+--- !u!114 &9048308596203698505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3275407133805375603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04f5b7bc730a8e47a4f66aa6b6056d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soloMode: 0
+  twoPlayerMode: 0
+  timeTrialMode: 0

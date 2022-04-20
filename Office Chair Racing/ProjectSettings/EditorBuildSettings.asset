@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 1bb6a02a5be65084496b7af95b7dbbf0
   - enabled: 1
-    path: Assets/Scenes/Main Office Track.unity
+    path: Assets/Scenes/Track 1.unity
     guid: 940f99c3b299e0b4fb01e85ec1d0422b
+  - enabled: 1
+    path: Assets/Scenes/Track 2.unity
+    guid: 44324e921be87ca43be6a5768dee85d3
+  - enabled: 1
+    path: Assets/Scenes/Track 3.unity
+    guid: fefe204271b84aa498fa0db783ab86a4
   m_configObjects: {}
