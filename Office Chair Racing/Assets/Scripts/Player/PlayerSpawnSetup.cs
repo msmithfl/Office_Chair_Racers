@@ -9,6 +9,8 @@ public class PlayerSpawnSetup : MonoBehaviour
 
     public bool isWaitingForPlayers = true;
 
+    public bool canWin = true;
+
     private GameObject playerManager;
 
     [SerializeField] private GameObject[] playerSkins = new GameObject[2];

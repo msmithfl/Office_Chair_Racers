@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: LPBP_Atlas
-  m_Shader: {fileID: 4800000, guid: 60241295333cfba43b7004cdec8c57bd, type: 3}
+  m_Shader: {fileID: 4800000, guid: 97479ea7328b3c447b584e5d8a6ab8e0, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
@@ -105,6 +105,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _ASEOutlineWidth: 0.05
+    - _AlphaCutoff: 0.5
     - _AlphaLevel: 0
     - _BumpPower: 0
     - _BumpScale: 1
@@ -112,13 +113,13 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EdgeRimLight: 0
-    - _EmissiveValue: 0
+    - _EmissiveValue: 0.25
     - _Float0: 0.05
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _LightBias: 0
-    - _LightScale: 1
+    - _LightBias: 0.29
+    - _LightScale: 2.93
     - _MainHighlightExponent: 262
     - _MainHighlightStrength: 0.696
     - _Maximum: 0.43
@@ -154,7 +155,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _FresnelColor: {r: 0, g: 0, b: 0, a: 0}
-    - _FresnelColorAmountA: {r: 0, g: 0, b: 0, a: 0}
+    - _FresnelColorAmountA: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 0.30588236}
     - _MainHighlight_Color: {r: 1, g: 1, b: 1, a: 0}
     - _SecondaryHighlightColor: {r: 0.8862069, g: 0.8862069, b: 0.8862069, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}

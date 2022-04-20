@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LapManager : MonoBehaviour
 {
@@ -13,19 +14,47 @@ public class LapManager : MonoBehaviour
     public List<Checkpoint> checkpoints;
     public int totalLaps;
 
+    private bool raceIsOver = false;
+
+    [SerializeField] private TMP_Text p1LapCounter;
+    [SerializeField] private TMP_Text p2LapCounter;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             PlayerMovement player = other.gameObject.GetComponent<PlayerMovement>();
+            int playerIndex = other.gameObject.GetComponent<PlayerSpawnSetup>().playerIndex;
+
             if(player.checkpointIndex == checkpoints.Count)
             {
                 player.lapNumber++;
                 player.checkpointIndex = 0;
 
+                //check for winner
                 if (player.lapNumber > totalLaps)
                 {
-                    print("Winner");
+                    if (!raceIsOver)
+                    {
+                        Debug.Log($"P{playerIndex} Wins");
+                        raceIsOver = true;
+                    }
+                }
+
+                //Lap UI update
+                if(playerIndex == 1)
+                {
+                    if (player.lapNumber > 3) { return; }
+                    p1LapCounter.text = $"P1: Laps {player.lapNumber}/3";
+                }
+                else if (playerIndex == 2)
+                {
+                    if(player.lapNumber > 3) { return; }
+                    p2LapCounter.text = $"P2: Laps {player.lapNumber}/3";
+                }
+                else
+                {
+                    Debug.LogError("Lap Counting Error");
                 }
             }
         }

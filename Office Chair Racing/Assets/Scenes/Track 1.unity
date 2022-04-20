@@ -908,6 +908,8 @@ MonoBehaviour:
   - {fileID: 471803890}
   - {fileID: 1506571435}
   totalLaps: 3
+  p1LapCounter: {fileID: 748711093}
+  p2LapCounter: {fileID: 1510922216}
 --- !u!1 &280746107
 GameObject:
   m_ObjectHideFlags: 0
@@ -2087,7 +2089,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'P1: Laps 0/3'
+  m_text: 'P1: Laps 1/3'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4046,7 +4048,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'P2: Laps 0/3'
+  m_text: 'P2: Laps 1/3'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10540,7 +10542,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Suits: []
   Heads: []
-  Chairs: []
 --- !u!114 &114866559104247179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10555,7 +10556,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Suits: []
   Heads: []
-  Chairs: []
 --- !u!137 &137047257222111801
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0

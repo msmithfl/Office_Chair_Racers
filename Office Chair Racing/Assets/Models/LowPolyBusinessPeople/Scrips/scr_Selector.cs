@@ -12,7 +12,6 @@ public class scr_Selector : MonoBehaviour {
     private int count = 0;
     public List<GameObject> Suits;
     public List<GameObject> Heads;
-    public List<GameObject> Chairs;
     private Renderer oRenderer;
     
     
@@ -39,19 +38,13 @@ public class scr_Selector : MonoBehaviour {
                     //Debug.Log(child + " added");
                 }
 
-            if (child.tag == "RacingChair")
-            {
-                Chairs.Add(child.gameObject);
-                //Debug.Log(child + " added");
-            }
+           
         }
 
         //pick a suit
         pickSuit();
         // pick headType A/B
         pickHead();
-        //pick a chair
-        pickChair();
    
     }
 
@@ -80,29 +73,9 @@ public class scr_Selector : MonoBehaviour {
             }
         }
 
-
-    void pickChair()
-    {
-        pick = Random.Range(0, Chairs.Count);
-        count = 0;
-
-        foreach (GameObject o in Chairs)
-        {
-
-            if (count == pick)
-            {
-                oRenderer = o.GetComponentInChildren<Renderer>();
-                oRenderer.enabled = true;
-            }
-            else
-            {
-                oRenderer = o.GetComponentInChildren<Renderer>();
-                oRenderer.enabled = false;
-            }
-            count++;
-        }
-    }
-
+   
+   
+    
 
     // Function for picking heads and hands will be picked to match based on choice here too.
     void pickHead()
@@ -140,24 +113,20 @@ public class scr_Selector : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        //ChangeSkin();
-    }
-    
-    void ChangeSkin()
-    {
         if (Input.GetKeyDown("space"))
         {
 
-
-
+                  
+          
             // pick a suit
             pickSuit();
             // pick headType A/B
             pickHead();
-
+       
 
         }
     }
+
 
 }
 
