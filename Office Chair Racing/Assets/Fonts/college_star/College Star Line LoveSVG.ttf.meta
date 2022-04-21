@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: e23025cf4d2c3b04fb1f5fcb2a9e4eca
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - College Star Line
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d2e575676353c574e871ec0468e73e94, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

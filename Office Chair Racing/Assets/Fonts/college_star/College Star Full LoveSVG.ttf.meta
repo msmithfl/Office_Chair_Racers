@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 3fb963c6fbf79cb42979a1b6598367d8
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - College Star Full
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a61ea7018357609428310992d2e5a690, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -932,7 +932,6 @@ MonoBehaviour:
   SkinTrousers: []
   SuitSkirts: []
   SkinSkirts: []
-  Chairs: []
 --- !u!1 &2477091413238256430
 GameObject:
   m_ObjectHideFlags: 0
@@ -6126,7 +6125,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Suits: []
   Heads: []
-  Chairs: []
 --- !u!1 &4885368097740050506
 GameObject:
   m_ObjectHideFlags: 0
@@ -9617,7 +9615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e27cd48395fa1084f8812d6dab92f63d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 275
+  moveSpeed: 300
   steerSpeed: 4
   lapNumber: 0
   checkpointIndex: 0

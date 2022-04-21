@@ -1,26 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayModeCanvasManager : MonoBehaviour
 {
-    [SerializeField] private GameObject gameManager;
-    [SerializeField] private MultiplayerSpawn multiplayerSpawn;
+    [SerializeField] private GameObject waitForPlayersObj;
+    [SerializeField] private TMP_Text waitForPlayersText;
 
-    [SerializeField] private GameObject waitForPlayersText;
+    private MultiplayerSpawn multiplayerSpawn;
 
     void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager");
-
-        multiplayerSpawn = gameManager.GetComponent<MultiplayerSpawn>();
+        multiplayerSpawn = FindObjectOfType<MultiplayerSpawn>();
     }
 
     void Update()
     {
         if (!multiplayerSpawn.waitForPlayersBool)
         {
-            waitForPlayersText.SetActive(false);
+            waitForPlayersObj.SetActive(false);
+        }
+
+        if (multiplayerSpawn.playerCount == 0)
+        {
+            waitForPlayersText.text = "Waiting for 2 player(s)...";
+        }
+        if (multiplayerSpawn.playerCount == 1)
+        {
+            waitForPlayersText.text = "Waiting for 1 player(s)...";
         }
     }
 }
