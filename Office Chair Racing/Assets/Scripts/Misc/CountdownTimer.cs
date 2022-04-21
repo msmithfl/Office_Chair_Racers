@@ -6,13 +6,10 @@ using TMPro;
 public class CountdownTimer : MonoBehaviour
 {
     [SerializeField] private GameObject raceCountdownTextObj;
-
     [SerializeField] private int countdownTime;
-
     [SerializeField] private float countdownSpeed = 3f;
 
     private PlayerSpawnSetup[] players;
-
 
     private void Start()
     {

@@ -16,6 +16,7 @@ public class MenuManager: MonoBehaviour
     {
         mainMenuObj.SetActive(true);
         gameMenuObj.SetActive(false);
+        firstBtnMainMenu.Select();
     }
 
     //main menu buttons
@@ -40,12 +41,14 @@ public class MenuManager: MonoBehaviour
 
     public void Track2()
     {
-        SceneManager.LoadScene(2);
+        Debug.Log("Load Track 2");
+        //SceneManager.LoadScene(2);
     }
 
     public void Track3()
     {
-        SceneManager.LoadScene(3);
+        Debug.Log("Load Track 3");
+        //SceneManager.LoadScene(3);
     }
 
     public void BackButton()

@@ -7,18 +7,15 @@ public class MultiplayerSpawn : MonoBehaviour
 {
     private GameObject spawnPointP1;
     private GameObject spawnPointP2;
-    public int playerCount = 0;
 
+    public int playerCount = 0;
     public bool waitForPlayersBool = true;
 
     private CountdownTimer countdownTimer;
 
     private void Awake()
     {
-        if (countdownTimer == null)
-        {
-            return;
-        }
+        countdownTimer = FindObjectOfType<CountdownTimer>();
     }
 
     public void OnPlayerJoined()
@@ -43,7 +40,6 @@ public class MultiplayerSpawn : MonoBehaviour
             player.playerIndex = 2;
             playerCount++;
             waitForPlayersBool = false;
-            countdownTimer = FindObjectOfType<CountdownTimer>();
             StartCoroutine(countdownTimer.StartRaceCountdown());
         }
     }

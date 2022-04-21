@@ -854,8 +854,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Level Select
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 167ac6a0df528144c9720c00b1285661, type: 2}
+  m_sharedMaterial: {fileID: 7205807720753669328, guid: 167ac6a0df528144c9720c00b1285661, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1175,10 +1175,7 @@ MonoBehaviour:
   - {fileID: 471803890}
   - {fileID: 1506571435}
   totalLaps: 3
-  p1LapCounter: {fileID: 748711093}
-  p2LapCounter: {fileID: 1510922216}
-  winnerText: {fileID: 550272435}
-  afterGameMenuManager: {fileID: 1845292875}
+  playModeCanvasManager: {fileID: 1642825784}
 --- !u!1 &280746107
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,8 +2043,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Main Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 167ac6a0df528144c9720c00b1285661, type: 2}
+  m_sharedMaterial: {fileID: 7205807720753669328, guid: 167ac6a0df528144c9720c00b1285661, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2760,10 +2757,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'P1: Laps 1/3'
+  m_text: 'P1: Lap 1/3'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 167ac6a0df528144c9720c00b1285661, type: 2}
+  m_sharedMaterial: {fileID: 7205807720753669328, guid: 167ac6a0df528144c9720c00b1285661, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4566,8 +4563,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Play Again
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 167ac6a0df528144c9720c00b1285661, type: 2}
+  m_sharedMaterial: {fileID: 7205807720753669328, guid: 167ac6a0df528144c9720c00b1285661, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5108,10 +5105,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'P2: Laps 1/3'
+  m_text: 'P2: Lap 1/3'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 167ac6a0df528144c9720c00b1285661, type: 2}
+  m_sharedMaterial: {fileID: 7205807720753669328, guid: 167ac6a0df528144c9720c00b1285661, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5662,8 +5659,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 70}
+  m_AnchoredPosition: {x: 0.000014305, y: 0}
+  m_SizeDelta: {x: 227.121, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1633428187
 MonoBehaviour:
@@ -5747,6 +5744,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633428185}
   m_CullTransparentMesh: 1
+--- !u!1 &1642825782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1642825785}
+  - component: {fileID: 1642825784}
+  - component: {fileID: 1642825783}
+  m_Layer: 0
+  m_Name: HUDHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1642825783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642825782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 837a926803a593848842af7398eb373f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raceCountdownTextObj: {fileID: 280746107}
+  countdownTime: 3
+  countdownSpeed: 1
+--- !u!114 &1642825784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642825782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4349a337280071b44b30ff84c1429b5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitForPlayersObj: {fileID: 998274939}
+  waitForPlayersText: {fileID: 439975196}
+  winnerText: {fileID: 550272435}
+  p1LapCounter: {fileID: 748711093}
+  p2LapCounter: {fileID: 1510922216}
+  afterGameMenuManager: {fileID: 1845292875}
+--- !u!4 &1642825785
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642825782}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1802995598}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1652671965
 GameObject:
   m_ObjectHideFlags: 0
@@ -6191,10 +6254,8 @@ GameObject:
   - component: {fileID: 1802995597}
   - component: {fileID: 1802995596}
   - component: {fileID: 1802995595}
-  - component: {fileID: 1802995599}
-  - component: {fileID: 1802995600}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HUDCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6277,45 +6338,14 @@ RectTransform:
   - {fileID: 1510922215}
   - {fileID: 280746108}
   - {fileID: 550272434}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1642825785}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1802995599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1802995594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4349a337280071b44b30ff84c1429b5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  multiplayerSpawn: {fileID: 0}
-  waitForPlayersObj: {fileID: 998274939}
-  waitForPlayersText: {fileID: 439975196}
---- !u!114 &1802995600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1802995594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 837a926803a593848842af7398eb373f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  raceCountdownTextObj: {fileID: 280746107}
-  countdownTime: 3
-  countdownSpeed: 1
 --- !u!1 &1845292874
 GameObject:
   m_ObjectHideFlags: 0
