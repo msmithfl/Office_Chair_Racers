@@ -9513,7 +9513,7 @@ Rigidbody:
   m_AngularDrag: 3
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 80
   m_CollisionDetection: 1
 --- !u!114 &8054727430937435511
@@ -9598,11 +9598,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e8d194a13b5a34398b4c695b02c6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIndex: 0
-  isWaitingForPlayers: 1
   playerSkins:
   - {fileID: 2477083009399109352}
   - {fileID: 4885354567009242632}
+  playerIndex: 0
+  isWaitingForPlayers: 1
 --- !u!114 &8054727430937435510
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,10 +12,12 @@ public class MultiplayerSpawn : MonoBehaviour
     public bool waitForPlayersBool = true;
 
     private CountdownTimer countdownTimer;
+    private CameraFocusPoint cameraFocusScript;
 
     private void Awake()
     {
         countdownTimer = FindObjectOfType<CountdownTimer>();
+        cameraFocusScript = FindObjectOfType<CameraFocusPoint>();
     }
 
     public void OnPlayerJoined()
@@ -28,6 +30,7 @@ public class MultiplayerSpawn : MonoBehaviour
             player.transform.position = spawnPointP1.transform.position;
             player.transform.rotation = spawnPointP1.transform.rotation;
             player.playerIndex = 1;
+            cameraFocusScript.object1 = player.transform;
             playerCount++;
         }
         //code for second
@@ -41,6 +44,8 @@ public class MultiplayerSpawn : MonoBehaviour
             playerCount++;
             waitForPlayersBool = false;
             StartCoroutine(countdownTimer.StartRaceCountdown());
+            cameraFocusScript.object2 = player.transform;
+            cameraFocusScript.isFocused = true;
         }
     }
 }

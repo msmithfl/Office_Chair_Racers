@@ -16,7 +16,7 @@ public class MenuManager: MonoBehaviour
     {
         mainMenuObj.SetActive(true);
         gameMenuObj.SetActive(false);
-        firstBtnMainMenu.Select();
+        //firstBtnMainMenu.Select();
     }
 
     //main menu buttons
