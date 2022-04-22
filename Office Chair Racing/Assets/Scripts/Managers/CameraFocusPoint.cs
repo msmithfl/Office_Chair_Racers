@@ -29,7 +29,6 @@ public class CameraFocusPoint : MonoBehaviour
         }
 
         distanceBetweenPlayers = Vector3.Distance(object1.position, object2.position);
-        //try moving back the camera on its local z axis when the objects are far apart (based on distance)
 
         center = ((object2.position - object1.position) / 2.0f) + object1.position;
 

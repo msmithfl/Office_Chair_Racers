@@ -10,7 +10,6 @@ public class CameraManager : MonoBehaviour
 
     private bool overviewCamActive = true;
 
-    [SerializeField] private bool distanceTest = false;
     private float camDistanceAtStart;
 
     private CinemachineFramingTransposer cinemachineValues;
@@ -45,17 +44,8 @@ public class CameraManager : MonoBehaviour
 
     private void Update()
     {
-        print(cameraFocusScript.distanceBetweenPlayers * zoomSpeed);
         cinemachineValues.m_CameraDistance = camDistanceAtStart + (cameraFocusScript.distanceBetweenPlayers * zoomSpeed);
-        //cinemachineValues.m_CameraDistance = cameraFocusScript.distanceBetweenPlayers * zoomSpeed;
 
-        //if (distanceTest)
-        //{
-        //    cinemachineValues.m_CameraDistance = 20;
-        //}
-        //else
-        //{
-        //    cinemachineValues.m_CameraDistance = camDistanceAtStart;
-        //}
+        //print(cameraFocusScript.distanceBetweenPlayers * zoomSpeed);
     }
 }
