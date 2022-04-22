@@ -13,11 +13,13 @@ public class MultiplayerSpawn : MonoBehaviour
 
     private CountdownTimer countdownTimer;
     private CameraFocusPoint cameraFocusScript;
+    private CameraManager cameraManager;
 
     private void Awake()
     {
         countdownTimer = FindObjectOfType<CountdownTimer>();
         cameraFocusScript = FindObjectOfType<CameraFocusPoint>();
+        cameraManager = FindObjectOfType<CameraManager>();
     }
 
     public void OnPlayerJoined()
@@ -46,6 +48,7 @@ public class MultiplayerSpawn : MonoBehaviour
             StartCoroutine(countdownTimer.StartRaceCountdown());
             cameraFocusScript.object2 = player.transform;
             cameraFocusScript.isFocused = true;
+            cameraManager.SwitchCameraPriority();
         }
     }
 }
