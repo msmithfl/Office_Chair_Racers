@@ -13,15 +13,18 @@ public class PlayerMovement : MonoBehaviour
     public int lapNumber;
     public int checkpointIndex;
 
-    private PlayerSpawnSetup playerSpawnSetup;
+    public bool hasBoost;
+    public bool isBoosting;
+
     private Rigidbody myRigidbody;
     private Animator myAnimator;
+    private PlayerSpawnSetup playerSpawnSetup;
+
     [SerializeField] private ParticleSystem smokeParticles;
 
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
-
         myAnimator = GetComponent<Animator>();
         playerSpawnSetup = GetComponent<PlayerSpawnSetup>();
 
@@ -43,9 +46,40 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void OnBoost(InputAction.CallbackContext context)
+    {
+        if (context.performed && hasBoost && !isBoosting)
+        {
+            isBoosting = true;
+        }
+    }
+
     public void OnSteering(InputAction.CallbackContext context)
     {
         steerInput = context.ReadValue<Vector2>();
+    }
+
+    private void PlayerBoost()
+    {
+        if (isBoosting && hasBoost)
+        {
+            hasBoost = false;
+            var main = smokeParticles.main;
+            main.startColor = Color.blue;
+            main.simulationSpeed = 2;
+            moveSpeed = 500;
+            StartCoroutine(TurnOffBoost());
+        }
+    }
+
+    private IEnumerator TurnOffBoost()
+    {
+        yield return new WaitForSeconds(4);
+        isBoosting = false;
+        var main = smokeParticles.main;
+        main.startColor = Color.white;
+        main.simulationSpeed = 1;
+        moveSpeed = 300;
     }
 
     private void PlayerAccelerate()
@@ -77,6 +111,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         PlayerAnimations();
+        PlayerBoost();
     }
 
     private void PlayerAnimations()
