@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody myRigidbody;
     private Animator myAnimator;
     private PlayerSpawnSetup playerSpawnSetup;
+    private PlayModeCanvasManager playModeCanvas;
 
     [SerializeField] private ParticleSystem smokeParticles;
 
@@ -27,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody>();
         myAnimator = GetComponent<Animator>();
         playerSpawnSetup = GetComponent<PlayerSpawnSetup>();
+        playModeCanvas = FindObjectOfType<PlayModeCanvasManager>();
 
         lapNumber = 1;
         checkpointIndex = 0;
@@ -63,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isBoosting && hasBoost)
         {
+            playModeCanvas.TurnOffBoostUI(playerSpawnSetup.playerIndex);
             hasBoost = false;
             var main = smokeParticles.main;
             main.startColor = Color.blue;

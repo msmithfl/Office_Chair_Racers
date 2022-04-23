@@ -66,6 +66,18 @@ public class PlayModeCanvasManager : MonoBehaviour
         }
     }
 
+    public void TurnOffBoostUI(int playerIndex)
+    {
+        if (playerIndex == 1)
+        {
+            p1BoostUI.color = boostUIColor;
+        }
+        else if (playerIndex == 2)
+        {
+            p2BoostUI.color = boostUIColor;
+        }
+    }
+
     //called from LapManager
     public void UpdateLapUI(int playerIndex, PlayerMovement player)
     {
