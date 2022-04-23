@@ -12,7 +12,7 @@ public class CameraManager : MonoBehaviour
 
     private float camDistanceAtStart;
 
-    private CinemachineFramingTransposer cinemachineValues;
+    private CinemachineFramingTransposer followCameraValues;
 
     private CameraFocusPoint cameraFocusScript;
 
@@ -22,8 +22,18 @@ public class CameraManager : MonoBehaviour
     {
         cameraFocusScript = FindObjectOfType<CameraFocusPoint>();
 
-        cinemachineValues = followCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
-        camDistanceAtStart = cinemachineValues.m_CameraDistance;
+        followCameraValues = followCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+        camDistanceAtStart = followCameraValues.m_CameraDistance;
+    }
+
+    private void Update()
+    {
+        FollowCameraDistance();
+    }
+
+    private void FollowCameraDistance()
+    {
+        followCameraValues.m_CameraDistance = camDistanceAtStart + (cameraFocusScript.distanceBetweenPlayers * zoomSpeed);
     }
 
     public void SwitchCameraPriority()
@@ -40,12 +50,5 @@ public class CameraManager : MonoBehaviour
         }
 
         overviewCamActive = !overviewCamActive;
-    }
-
-    private void Update()
-    {
-        cinemachineValues.m_CameraDistance = camDistanceAtStart + (cameraFocusScript.distanceBetweenPlayers * zoomSpeed);
-
-        //print(cameraFocusScript.distanceBetweenPlayers * zoomSpeed);
     }
 }

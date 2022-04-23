@@ -25,12 +25,15 @@ public class PlayerMovement : MonoBehaviour
 
     public ParticleSystem smokeParticles; //was serialized private
 
-    void Start()
+    private void Awake()
     {
         myRigidbody = GetComponent<Rigidbody>();
         myAnimator = GetComponent<Animator>();
         playerSpawnSetup = GetComponent<PlayerSpawnSetup>();
+    }
 
+    void Start()
+    {
         lapNumber = 1;
         checkpointIndex = 0;
     }
@@ -64,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlayerAccelerate()
     {
-        if (isAccelerating && !playerSpawnSetup.isWaitingForPlayers)
+        if (isAccelerating && !playerSpawnSetup.isWaitingForCountdown)
         {
             myRigidbody.AddRelativeForce(Vector3.back * moveSpeed * Time.deltaTime);
         }

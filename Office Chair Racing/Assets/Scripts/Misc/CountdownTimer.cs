@@ -22,7 +22,6 @@ public class CountdownTimer : MonoBehaviour
 
     public IEnumerator StartRaceCountdown()
     {
-
         //Ready!
         raceCountdownTextObj.SetActive(true);
         yield return new WaitForSeconds(countdownSpeed);
@@ -47,7 +46,7 @@ public class CountdownTimer : MonoBehaviour
         players = FindObjectsOfType<PlayerSpawnSetup>();
         foreach (var player in players)
         {
-            player.isWaitingForPlayers = false;
+            player.isWaitingForCountdown = false;
         }
     }
 }

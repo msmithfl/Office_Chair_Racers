@@ -6,16 +6,16 @@ using UnityEngine.InputSystem;
 public class PlayerSpawnSetup : MonoBehaviour
 {
     [SerializeField] private GameObject[] playerSkins = new GameObject[2];
-    private GameObject playerManager;
+    private GameObject multiplayerManager;
 
     public int playerIndex = 0; //P1 or P2, set in MultiplayerSpawn script
-    public bool isWaitingForPlayers = true;
+    public bool isWaitingForCountdown = true;
 
     void Start()
     {
-        playerManager = GameObject.FindGameObjectWithTag("GameManager");
+        multiplayerManager = GameObject.FindGameObjectWithTag("MultiplayerManager");
 
-        if (playerManager.GetComponent<MultiplayerSpawn>().playerCount == 1)
+        if (multiplayerManager.GetComponent<MultiplayerSpawn>().playerCount == 1)
         {
             playerSkins[0].SetActive(false);
         }

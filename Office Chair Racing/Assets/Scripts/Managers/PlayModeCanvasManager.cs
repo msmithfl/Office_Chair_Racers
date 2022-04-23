@@ -56,13 +56,13 @@ public class PlayModeCanvasManager : MonoBehaviour
 
     public void UpdateBoostUI(int playerIndex)
     {
-        if(playerIndex == 1)
+        if (playerIndex == 1)
         {
-            p1BoostUI.color = new Color(1, 1, 1, 1);
+            p1BoostUI.color = Color.white;
         }
         else if(playerIndex == 2)
         {
-            p2BoostUI.color = new Color(1, 1, 1, 1);
+            p2BoostUI.color = Color.white;
         }
     }
 
