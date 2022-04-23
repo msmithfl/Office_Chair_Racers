@@ -17,9 +17,18 @@ public class Collectable : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(rotation.x, rotation.y * rotSpeed * Time.deltaTime, rotation.z);
+        ObjectRotate();
+        GrowOnSpawn();
+    }
 
-        if(transform.localScale.x < 1)
+    private void ObjectRotate()
+    {
+        transform.Rotate(rotation.x, rotation.y * rotSpeed * Time.deltaTime, rotation.z);
+    }
+
+    private void GrowOnSpawn()
+    {
+        if (transform.localScale.x < 1)
         {
             transform.localScale += new Vector3(0.2f, 0.2f, 0.2f) * Time.deltaTime;
             canPickup = false;
@@ -29,7 +38,7 @@ public class Collectable : MonoBehaviour
             canPickup = true;
         }
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player")

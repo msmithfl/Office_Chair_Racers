@@ -5,30 +5,31 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 50f;
+    [Header("Movement")]
+    public float moveSpeed = 50f; //was serialized private
     [SerializeField] private float steerSpeed = 1f;
     private Vector2 steerInput;
     private bool isAccelerating = false;
 
+    [Header("Lap Counter")]
     public int lapNumber;
     public int checkpointIndex;
 
+    [Header("Boost Indicators")]
     public bool hasBoost;
     public bool isBoosting;
 
     private Rigidbody myRigidbody;
     private Animator myAnimator;
     private PlayerSpawnSetup playerSpawnSetup;
-    private PlayModeCanvasManager playModeCanvas;
 
-    [SerializeField] private ParticleSystem smokeParticles;
+    public ParticleSystem smokeParticles; //was serialized private
 
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
         myAnimator = GetComponent<Animator>();
         playerSpawnSetup = GetComponent<PlayerSpawnSetup>();
-        playModeCanvas = FindObjectOfType<PlayModeCanvasManager>();
 
         lapNumber = 1;
         checkpointIndex = 0;
@@ -61,30 +62,6 @@ public class PlayerMovement : MonoBehaviour
         steerInput = context.ReadValue<Vector2>();
     }
 
-    private void PlayerBoost()
-    {
-        if (isBoosting && hasBoost)
-        {
-            playModeCanvas.TurnOffBoostUI(playerSpawnSetup.playerIndex);
-            hasBoost = false;
-            var main = smokeParticles.main;
-            main.startColor = Color.blue;
-            main.simulationSpeed = 2;
-            moveSpeed = 500;
-            StartCoroutine(TurnOffBoost());
-        }
-    }
-
-    private IEnumerator TurnOffBoost()
-    {
-        yield return new WaitForSeconds(4);
-        isBoosting = false;
-        var main = smokeParticles.main;
-        main.startColor = Color.white;
-        main.simulationSpeed = 1;
-        moveSpeed = 300;
-    }
-
     private void PlayerAccelerate()
     {
         if (isAccelerating && !playerSpawnSetup.isWaitingForPlayers)
@@ -114,7 +91,6 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         PlayerAnimations();
-        PlayerBoost();
     }
 
     private void PlayerAnimations()
