@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerBoost : MonoBehaviour
 {
     [SerializeField] private int boostTime = 4;
+    [SerializeField] private int boostSpeed = 500;
 
     private PlayerMovement player;
     private PlayerSpawnSetup playerSpawnSetup;
@@ -31,7 +32,7 @@ public class PlayerBoost : MonoBehaviour
             var main = player.smokeParticles.main;
             main.startColor = Color.blue;
             main.simulationSpeed = 2;
-            player.moveSpeed = 500;
+            player.moveSpeed = boostSpeed;
             StartCoroutine(TurnOffBoost());
         }
     }

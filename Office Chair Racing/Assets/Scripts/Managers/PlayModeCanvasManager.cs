@@ -32,7 +32,7 @@ public class PlayModeCanvasManager : MonoBehaviour
         lapManager = FindObjectOfType<LapManager>();
 
         p1LapCounter.text = $"P1: Lap 1/{lapManager.totalLaps}";
-        p2LapCounter.text = $"P1: Lap 1/{lapManager.totalLaps}";
+        p2LapCounter.text = $"P2: Lap 1/{lapManager.totalLaps}";
 
         boostUIColor = p1BoostUI.color;
     }
