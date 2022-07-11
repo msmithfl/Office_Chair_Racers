@@ -1,2 +1,2 @@
-# Office_Chair_Racers
+# office-chair-racers
 Unity 3D Project
