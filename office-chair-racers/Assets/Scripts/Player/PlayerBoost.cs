@@ -1,21 +1,20 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBoost : MonoBehaviour
 {
-    [SerializeField] private int boostTime = 4;
-    [SerializeField] private int boostSpeed = 500;
+    [SerializeField] private int m_BoostTime = 4;
+    [SerializeField] private int m_BoostSpeed = 500;
 
-    private PlayerMovement player;
-    private PlayerSpawnSetup playerSpawnSetup;
-    private PlayModeCanvasManager playModeCanvas;
+    private PlayerMovement m_Player;
+    private PlayerSpawnSetup m_PlayerSpawnSetup;
+    private PlayModeCanvasManager m_PlayModeCanvas;
 
     void Start()
     {
-        player = GetComponent<PlayerMovement>();
-        playerSpawnSetup = GetComponent<PlayerSpawnSetup>();
-        playModeCanvas = FindObjectOfType<PlayModeCanvasManager>();
+        m_Player = GetComponent<PlayerMovement>();
+        m_PlayerSpawnSetup = GetComponent<PlayerSpawnSetup>();
+        m_PlayModeCanvas = FindObjectOfType<PlayModeCanvasManager>();
     }
 
     void Update()
@@ -25,25 +24,25 @@ public class PlayerBoost : MonoBehaviour
 
     private void PlayerBoosting()
     {
-        if (player.isBoosting && player.hasBoost)
+        if (m_Player.isBoosting && m_Player.hasBoost)
         {
-            playModeCanvas.TurnOffBoostUI(playerSpawnSetup.playerIndex);
-            player.hasBoost = false;
-            var main = player.smokeParticles.main;
+            m_PlayModeCanvas.TurnOffBoostUI(m_PlayerSpawnSetup.playerIndex);
+            m_Player.hasBoost = false;
+            var main = m_Player.smokeParticles.main;
             main.startColor = Color.blue;
             main.simulationSpeed = 2;
-            player.moveSpeed = boostSpeed;
+            m_Player.moveSpeed = m_BoostSpeed;
             StartCoroutine(TurnOffBoost());
         }
     }
 
     private IEnumerator TurnOffBoost()
     {
-        yield return new WaitForSeconds(boostTime);
-        player.isBoosting = false;
-        var main = player.smokeParticles.main;
+        yield return new WaitForSeconds(m_BoostTime);
+        m_Player.isBoosting = false;
+        var main = m_Player.smokeParticles.main;
         main.startColor = Color.white;
         main.simulationSpeed = 1;
-        player.moveSpeed = 300;
+        m_Player.moveSpeed = 300;
     }
 }

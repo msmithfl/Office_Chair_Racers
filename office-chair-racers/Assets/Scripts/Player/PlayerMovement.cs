@@ -7,9 +7,9 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed = 50f; //was serialized private
-    [SerializeField] private float steerSpeed = 1f;
-    private Vector2 steerInput;
-    private bool isAccelerating = false;
+    [SerializeField] private float m_SteerSpeed = 1f;
+    private Vector2 m_SteerInput;
+    private bool m_IsAccelerating = false;
 
     [Header("Lap Counter")]
     public int lapNumber;
@@ -19,17 +19,17 @@ public class PlayerMovement : MonoBehaviour
     public bool hasBoost;
     public bool isBoosting;
 
-    private Rigidbody myRigidbody;
-    private Animator myAnimator;
-    private PlayerSpawnSetup playerSpawnSetup;
+    private Rigidbody m_Rigidbody;
+    private Animator m_Animator;
+    private PlayerSpawnSetup m_PlayerSpawnSetup;
 
     public ParticleSystem smokeParticles; //was serialized private
 
     private void Awake()
     {
-        myRigidbody = GetComponent<Rigidbody>();
-        myAnimator = GetComponent<Animator>();
-        playerSpawnSetup = GetComponent<PlayerSpawnSetup>();
+        m_Rigidbody = GetComponent<Rigidbody>();
+        m_Animator = GetComponent<Animator>();
+        m_PlayerSpawnSetup = GetComponent<PlayerSpawnSetup>();
     }
 
     void Start()
@@ -42,12 +42,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.performed)
         {
-            isAccelerating = true;
+            m_IsAccelerating = true;
             smokeParticles.Play();
         }
         else if (context.canceled)
         {
-            isAccelerating = false;
+            m_IsAccelerating = false;
             smokeParticles.Stop();
         }
     }
@@ -62,26 +62,26 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnSteering(InputAction.CallbackContext context)
     {
-        steerInput = context.ReadValue<Vector2>();
+        m_SteerInput = context.ReadValue<Vector2>();
     }
 
     private void PlayerAccelerate()
     {
-        if (isAccelerating && !playerSpawnSetup.isWaitingForCountdown)
+        if (m_IsAccelerating && !m_PlayerSpawnSetup.isWaitingForCountdown)
         {
-            myRigidbody.AddRelativeForce(Vector3.back * moveSpeed * Time.deltaTime);
+            m_Rigidbody.AddRelativeForce(Vector3.back * moveSpeed * Time.deltaTime);
         }
     }
 
     private void PlayerRotate()
     {
-        if (steerInput.x < -0.1)
+        if (m_SteerInput.x < -0.1)
         {
-            transform.Rotate(0, -steerSpeed, 0);
+            transform.Rotate(0, -m_SteerSpeed, 0);
         }
-        else if (steerInput.x > 0.1)
+        else if (m_SteerInput.x > 0.1)
         {
-            transform.Rotate(0, steerSpeed, 0);
+            transform.Rotate(0, m_SteerSpeed, 0);
         }
     }
 
@@ -98,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlayerAnimations()
     {
-        myAnimator.SetBool("isAccelerating", isAccelerating);
+        m_Animator.SetBool("isAccelerating", m_IsAccelerating);
     }
 
     //used to fix out of control spinning after collisions
@@ -113,6 +113,6 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator ResetAngularVelocity()
     {
         yield return new WaitForSeconds(0.2f);
-        myRigidbody.angularVelocity = Vector3.zero;
+        m_Rigidbody.angularVelocity = Vector3.zero;
     }
 }

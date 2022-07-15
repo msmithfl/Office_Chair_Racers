@@ -9629,9 +9629,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e8d194a13b5a34398b4c695b02c6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSkins:
-  - {fileID: 2477083009399109352}
+  m_PlayerSkins:
   - {fileID: 4885354567009242632}
+  - {fileID: 2477083009399109352}
   playerIndicators:
   - {fileID: 658366287407111543}
   - {fileID: 8435769476232387641}
@@ -9650,7 +9650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 300
-  steerSpeed: 4
+  m_SteerSpeed: 3.5
   lapNumber: 0
   checkpointIndex: 0
   hasBoost: 0
@@ -9668,8 +9668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6917e79177623d41abb1fdca0da508b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boostTime: 4
-  boostSpeed: 500
+  m_BoostTime: 4
+  m_BoostSpeed: 500
 --- !u!1 &8075986268970432337
 GameObject:
   m_ObjectHideFlags: 0
