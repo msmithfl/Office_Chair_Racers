@@ -9632,7 +9632,7 @@ MonoBehaviour:
   m_PlayerSkins:
   - {fileID: 4885354567009242632}
   - {fileID: 2477083009399109352}
-  playerIndicators:
+  m_PlayerIndicators:
   - {fileID: 658366287407111543}
   - {fileID: 8435769476232387641}
   playerIndex: 0

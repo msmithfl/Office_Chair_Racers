@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed = 50f; //was serialized private
+    public float moveSpeed = 50f;
     [SerializeField] private float m_SteerSpeed = 1f;
     private Vector2 m_SteerInput;
     private bool m_IsAccelerating = false;
@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator m_Animator;
     private PlayerSpawnSetup m_PlayerSpawnSetup;
 
-    public ParticleSystem smokeParticles; //was serialized private
+    public ParticleSystem smokeParticles;
 
     private void Awake()
     {
