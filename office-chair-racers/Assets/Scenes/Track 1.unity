@@ -6780,8 +6780,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e28ea0fb3b52a46ad51ae74293ca49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuCanvas: {fileID: 792155141}
-  firstBtnGameMenu: {fileID: 1583072891}
+  m_MenuCanvas: {fileID: 792155141}
+  m_FirstBtnGameMenu: {fileID: 1583072891}
 --- !u!4 &1845292876
 Transform:
   m_ObjectHideFlags: 0

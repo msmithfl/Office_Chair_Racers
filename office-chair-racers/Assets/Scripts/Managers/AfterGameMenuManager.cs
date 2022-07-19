@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class AfterGameMenuManager : MonoBehaviour
 {
-    [SerializeField] private GameObject menuCanvas;
-    [SerializeField] private Button firstBtnGameMenu;
+    [SerializeField] private GameObject m_MenuCanvas;
+    [SerializeField] private Button m_FirstBtnGameMenu;
 
     public void PlayAgain()
     {
@@ -21,7 +21,7 @@ public class AfterGameMenuManager : MonoBehaviour
 
     public void SetGameMenuActive()
     {
-        menuCanvas.gameObject.SetActive(true);
-        firstBtnGameMenu.Select();
+        m_MenuCanvas.gameObject.SetActive(true);
+        m_FirstBtnGameMenu.Select();
     }
 }
