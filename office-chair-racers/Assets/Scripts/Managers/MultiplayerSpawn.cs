@@ -5,21 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class MultiplayerSpawn : MonoBehaviour
 {
-    private GameObject spawnPointP1;
-    private GameObject spawnPointP2;
+    private GameObject m_SpawnPointP1;
+    private GameObject m_SpawnPointP2;
 
     public int playerCount = 0;
     public bool waitForPlayersBool = true;
 
-    private CountdownTimer countdownTimer;
-    private CameraFocusPoint cameraFocusScript;
-    private CameraManager cameraManager;
+    private CountdownTimer m_CountdownTimer;
+    private CameraFocusPoint m_CameraFocusScript;
+    private CameraManager m_CameraManager;
 
     private void Awake()
     {
-        countdownTimer = FindObjectOfType<CountdownTimer>();
-        cameraFocusScript = FindObjectOfType<CameraFocusPoint>();
-        cameraManager = FindObjectOfType<CameraManager>();
+        m_CountdownTimer = FindObjectOfType<CountdownTimer>();
+        m_CameraFocusScript = FindObjectOfType<CameraFocusPoint>();
+        m_CameraManager = FindObjectOfType<CameraManager>();
     }
 
     public void OnPlayerJoined()
@@ -36,27 +36,27 @@ public class MultiplayerSpawn : MonoBehaviour
 
     private void SpawnPlayerOne()
     {
-        spawnPointP1 = GameObject.FindGameObjectWithTag("SpawnPoint1");
+        m_SpawnPointP1 = GameObject.FindGameObjectWithTag("SpawnPoint1");
         PlayerSpawnSetup player = FindObjectOfType<PlayerSpawnSetup>();
-        player.transform.position = spawnPointP1.transform.position;
-        player.transform.rotation = spawnPointP1.transform.rotation;
+        player.transform.position = m_SpawnPointP1.transform.position;
+        player.transform.rotation = m_SpawnPointP1.transform.rotation;
         player.playerIndex = 1;
-        cameraFocusScript.object1 = player.transform;
+        m_CameraFocusScript.object1 = player.transform;
         playerCount++;
     }
 
     private void SpawnPlayerTwo()
     {
-        spawnPointP2 = GameObject.FindGameObjectWithTag("SpawnPoint2");
+        m_SpawnPointP2 = GameObject.FindGameObjectWithTag("SpawnPoint2");
         PlayerSpawnSetup player = FindObjectOfType<PlayerSpawnSetup>();
-        player.transform.position = spawnPointP2.transform.position;
-        player.transform.rotation = spawnPointP2.transform.rotation;
+        player.transform.position = m_SpawnPointP2.transform.position;
+        player.transform.rotation = m_SpawnPointP2.transform.rotation;
         player.playerIndex = 2;
         playerCount++;
         waitForPlayersBool = false;
-        StartCoroutine(countdownTimer.StartRaceCountdown());
-        cameraFocusScript.object2 = player.transform;
-        cameraFocusScript.isFocused = true;
-        cameraManager.SwitchCameraPriority();
+        StartCoroutine(m_CountdownTimer.StartRaceCountdown());
+        m_CameraFocusScript.object2 = player.transform;
+        m_CameraFocusScript.isFocused = true;
+        m_CameraManager.SwitchCameraPriority();
     }
 }
