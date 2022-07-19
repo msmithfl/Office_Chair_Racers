@@ -1207,7 +1207,7 @@ MonoBehaviour:
   - {fileID: 471803890}
   - {fileID: 1506571435}
   totalLaps: 7
-  playModeCanvasManager: {fileID: 1642825784}
+  m_PlayModeCanvasManager: {fileID: 1642825784}
 --- !u!1 &280746107
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,9 +1706,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2988061b70805394a8b711ea7b7383dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overviewCamera: {fileID: 29869499}
-  followCamera: {fileID: 1940693670}
-  zoomSpeed: 0.3
+  m_OverviewCamera: {fileID: 29869499}
+  m_FollowCamera: {fileID: 1940693670}
+  m_ZoomSpeed: 0.3
 --- !u!4 &492734652
 Transform:
   m_ObjectHideFlags: 0

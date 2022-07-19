@@ -11,15 +11,15 @@ public class LapManager : MonoBehaviour
     when a game object enters the lap collider, it checks if it is the player
     it then grabs a reference to the player and checks if the player's checkpointIndex equals the total amount of checkpoints
     if the check is successful, the player's lapNumber is increased and the checkpointIndex is reset to 0
-    last, it check if the players lapNumber is greater than the total lap count to determine a winner
+    last, it checks if the player's lapNumber is greater than the total lap count to determine a winner
     */
 
     public List<Checkpoint> checkpoints;
     public int totalLaps;
 
-    private bool raceIsOver = false;
+    private bool m_RaceIsOver = false;
 
-    [SerializeField] private PlayModeCanvasManager playModeCanvasManager;
+    [SerializeField] private PlayModeCanvasManager m_PlayModeCanvasManager;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -36,14 +36,14 @@ public class LapManager : MonoBehaviour
                 //check for winner
                 if (player.lapNumber > totalLaps)
                 {
-                    if (!raceIsOver)
+                    if (!m_RaceIsOver)
                     {
-                        raceIsOver = true;
-                        playModeCanvasManager.DisplayWinnerText(playerIndex);
+                        m_RaceIsOver = true;
+                        m_PlayModeCanvasManager.DisplayWinnerText(playerIndex);
                     }
                 }
 
-                playModeCanvasManager.UpdateLapUI(playerIndex, player); 
+                m_PlayModeCanvasManager.UpdateLapUI(playerIndex, player); 
             }
         }
     }

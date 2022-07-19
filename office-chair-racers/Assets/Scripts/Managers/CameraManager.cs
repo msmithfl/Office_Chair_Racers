@@ -5,25 +5,25 @@ using Cinemachine;
 
 public class CameraManager : MonoBehaviour
 {
-    [SerializeField] private CinemachineVirtualCamera overviewCamera;
-    [SerializeField] private CinemachineVirtualCamera followCamera;
+    [SerializeField] private CinemachineVirtualCamera m_OverviewCamera;
+    [SerializeField] private CinemachineVirtualCamera m_FollowCamera;
 
-    private bool overviewCamActive = true;
+    private bool m_OverviewCamActive = true;
 
-    private float camDistanceAtStart;
+    private float m_CamDistanceAtStart;
 
-    private CinemachineFramingTransposer followCameraValues;
+    private CinemachineFramingTransposer m_FollowCameraValues;
 
-    private CameraFocusPoint cameraFocusScript;
+    private CameraFocusPoint m_CameraFocusScript;
 
-    [SerializeField] private float zoomSpeed = 0.01f;
+    [SerializeField] private float m_ZoomSpeed = 0.01f;
 
     private void Start()
     {
-        cameraFocusScript = FindObjectOfType<CameraFocusPoint>();
+        m_CameraFocusScript = FindObjectOfType<CameraFocusPoint>();
 
-        followCameraValues = followCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
-        camDistanceAtStart = followCameraValues.m_CameraDistance;
+        m_FollowCameraValues = m_FollowCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+        m_CamDistanceAtStart = m_FollowCameraValues.m_CameraDistance;
     }
 
     private void Update()
@@ -33,22 +33,22 @@ public class CameraManager : MonoBehaviour
 
     private void FollowCameraDistance()
     {
-        followCameraValues.m_CameraDistance = camDistanceAtStart + (cameraFocusScript.distanceBetweenPlayers * zoomSpeed);
+        m_FollowCameraValues.m_CameraDistance = m_CamDistanceAtStart + (m_CameraFocusScript.distanceBetweenPlayers * m_ZoomSpeed);
     }
 
     public void SwitchCameraPriority()
     {
-        if (overviewCamActive)
+        if (m_OverviewCamActive)
         {
-            overviewCamera.Priority = 0;
-            followCamera.Priority = 1;
+            m_OverviewCamera.Priority = 0;
+            m_FollowCamera.Priority = 1;
         }
         else
         {
-            overviewCamera.Priority = 1;
-            followCamera.Priority = 0;
+            m_OverviewCamera.Priority = 1;
+            m_FollowCamera.Priority = 0;
         }
 
-        overviewCamActive = !overviewCamActive;
+        m_OverviewCamActive = !m_OverviewCamActive;
     }
 }
